@@ -1,8 +1,9 @@
 import Home from "@/pages/homePage"
+import asyncComponent from "../utils/asyncComponent"
 const routes = [
     {
         path: '/',
-        component:Home ,
+        component:asyncComponent(()=>import("@/pages/homePage")) ,
         name:"home",
     },
     // {
