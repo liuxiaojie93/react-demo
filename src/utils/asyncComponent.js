@@ -9,9 +9,10 @@ export default function asyncComponent(importComponent){
             }
         }
         componentDidMount(){
-            importComponent().then((component)=>{
+            console.log("asyncComponent");
+            importComponent().then((mod)=>{
                 this.setState({
-                    component
+                    component:mod.default
                 })
             })
         }
@@ -19,7 +20,7 @@ export default function asyncComponent(importComponent){
             const {
                 component:C
             } = this.state;
-           return  C?<C >  </C>:null
+           return  C?<C ></C>:null
         }
     }
 

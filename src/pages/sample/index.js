@@ -1,12 +1,12 @@
 import React from "react";
-class Home extends React.Component{
+class Sample extends React.Component{
     componentDidMount(){
-        console.log("Home DidMount");
+        console.log("Sample DidMount");
     }
     render(){
         return (<div>
-            homePage
+            sample
         </div>)
     }
 }
-export default Home
+export default Sample
