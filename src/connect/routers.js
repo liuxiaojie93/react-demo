@@ -4,6 +4,7 @@ const routes = [
         path: '/',
         component:asyncComponent(()=>import("@/pages/homePage")) ,
         name:"home",
+        exact:true
     },
     {
        path: '/sample',//默认首加
