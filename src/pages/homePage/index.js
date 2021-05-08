@@ -1,5 +1,6 @@
 import React from "react";
 import {withRouter} from "react-router-dom"
+import Container from "../components/Container"
 class Home extends React.Component{
     componentDidMount(){
         console.log("Home DidMount",this.props);
@@ -34,9 +35,14 @@ class Home extends React.Component{
     }
     render(){
         return (<div>
-            homePage
+            <div>homePage</div>
+            <div >
+                num:{this.props.homeState.num}
+                <button onClick={this.props.add.bind(this,1)}>加 </button>
+                <button onClick={this.props.reduce.bind(this,1)}>减 </button>
+            </div>
             <button onClick={this.goNext.bind(this)}> go sample </button>
         </div>)
     }
 }
-export default withRouter(Home)
+export default Container(withRouter(Home))

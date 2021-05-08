@@ -1,0 +1,6 @@
+const INCREMENT ="INCREMENT";
+const REDUCE= "REDUCE"
+export {
+    INCREMENT,
+    REDUCE
+}
