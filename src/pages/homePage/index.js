@@ -1,6 +1,8 @@
 import React from "react";
 import {withRouter} from "react-router-dom"
-import Container from "../components/Container"
+import {add,reduce} from "./reducer/actions"
+import { connect } from 'react-redux'
+console.log(add);
 class Home extends React.Component{
     componentDidMount(){
         console.log("Home DidMount",this.props);
@@ -10,12 +12,12 @@ class Home extends React.Component{
         const {history} = this.props;
         // 跳转方式-query (参数地址栏显示)
         // <Route path='/sample' component={sample}></Route> 
-        // history.push({
-        //     pathname:"/sample",
-        //     query:{
-        //         type:1
-        //     }
-        // })
+        history.push({
+            pathname:"/sample",
+            query:{
+                type:1
+            }
+        })
 
         // 跳转方式-params (参数地址栏不显示，刷新地址栏，参数丢失)
         // <Route path='/sample/:type' component={sample}></Route> 
@@ -45,4 +47,11 @@ class Home extends React.Component{
         </div>)
     }
 }
-export default Container(withRouter(Home))
+export default connect(({homeReducer})=>{
+    return {
+        homeState:homeReducer
+    }
+},{
+    add,
+    reduce
+})(withRouter(Home))
