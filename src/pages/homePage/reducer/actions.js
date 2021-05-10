@@ -5,21 +5,21 @@ export {
     REDUCE
 }
 
-const add = num=>({
-    type:"INCREMENT",
-    num
-});
+
 const reduce = num =>({
     type:"REDUCE",
     num
 })
-// const add =  (dispatch,num) => {
-//     dispatch({
-//         type:"INCREMENT",
-//         num
-//     })
-// };
-// const  reduce =  (dispatch,num) => {
+
+const add =  (num) => (dispatch,getState) => {
+    console.log("num",num);
+    console.log(getState());
+    dispatch({
+        type:"INCREMENT",
+        num
+    })
+};
+// const  reduce =  (num) => (dispatch) => {
 //     dispatch({
 //         type:"REDUCE",
 //         num
